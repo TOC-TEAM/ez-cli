@@ -2,8 +2,8 @@
 
 > A cli to create an MPA egg project easily
 
-[![Build Status](https://img.shields.io/travis/xxxxxMiss/ez-cli/master.svg)](https://travis-ci.org/xxxxxMiss/ez-cli)
-[![Codecov branch](https://img.shields.io/codecov/c/github/xxxxxMiss/ez-cli/master.svg)](https://codecov.io/gh/xxxxxMiss/ez-cli)
+[![Build Status](https://img.shields.io/travis/TOC-TEAM/ez-cli/master.svg)](https://travis-ci.org/TOC-TEAM/ez-cli)
+[![Codecov branch](https://img.shields.io/codecov/c/github/TOC-TEAM/ez-cli/master.svg)](https://codecov.io/gh/TOC-TEAM/ez-cli)
 [![NPM](https://img.shields.io/npm/v/ez-cli.svg)](https://www.npmjs.com/package/ez-cli)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 [![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)](https://opensource.org/licenses/MIT)

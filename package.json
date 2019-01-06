@@ -4,7 +4,7 @@
   "description": "A cli to create an MPA egg project easily",
   "author": "xxxxxMiss",
   "license": "MIT",
-  "repository": "xxxxxMiss/ez-cli",
+  "repository": "https://github.com/toc-team/ez-cli",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
