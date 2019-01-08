@@ -41,6 +41,9 @@ describe('transform file name', () => {
     it('should transform `A-B`', () => {
       expect(underscore('Came-Case')).toBe('came_case')
     })
+    it('should transform `AB`', () => {
+      expect(underscore('CameCase')).toBe('came_case')
+    })
   })
 
   describe('hyphen', () => {

@@ -4,6 +4,8 @@ import config from '../lib/config'
 import path from 'path'
 import { vol } from 'memfs'
 
+jest.mock('../lib/config')
+
 describe('ez rename', () => {
   beforeAll(() => {
     config.set('ezConfig', {
@@ -30,6 +32,19 @@ describe('ez rename', () => {
     renameAction({
       oldname: 'account/login.js',
       newname: 'account/index.js',
+    })
+    expect(vol.toJSON()).toMatchObject(
+      getConstructure({
+        entries: ['account/index.js'],
+        css: 'scss',
+      })
+    )
+  })
+
+  it('support shorthand for [newname]', () => {
+    renameAction({
+      oldname: 'account/login.js',
+      newname: 'index.js',
     })
     expect(vol.toJSON()).toMatchObject(
       getConstructure({
