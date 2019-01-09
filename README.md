@@ -95,6 +95,9 @@ $ ez add account/logout.js --styl
 # 移除一个入口文件，也会自动移除同名的html和css
 $ ez rm account/index.js
 
+# 可以一次性移除多个入口
+$ ez rm account/index.js position/index.js
+
 # 默认情况下，每当移除一个入口js，只会自动移除同名的html和js，
 # 并不会自动移除该入口文件对应的资源目录极其下面的资源文件。
 # 通过-a选项，可以将其对应的资源文件也移除掉。

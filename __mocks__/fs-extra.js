@@ -19,4 +19,17 @@ fse.renameSync = function renameSync(oldPath, newPath) {
   vol.renameSync(oldPath, newPath)
 }
 
+fse.removeSync = function removeSync(_path) {
+  vol.unlinkSync(_path)
+}
+
+fse.rmdirSync = function rmdirSync(_path) {
+  const files = vol.readdirSync(_path)
+  if (files && files.length < 1) {
+    vol.rmdirSync(_path)
+  } else {
+    files.forEach(file => vol.unlinkSync(path.join(_path, file)))
+  }
+}
+
 module.exports = fse
