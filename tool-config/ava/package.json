@@ -1,0 +1,24 @@
+{
+  "scripts": {
+    "test": "nyc ava"
+  },
+  "ava": {
+    "files": [
+      "src/**/*.{js,jsx}"
+    ],
+    "babel": false,
+    "compileEnhancements": false,
+    "require": [
+      "esm"
+    ],
+    "verbose": true,
+    "extensions": [
+      "js",
+      "jsx"
+    ]
+  },
+  "devDependencies": {
+    "ava": "1.0.0-beta.8",
+    "nyc": "^13.0.1"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "scripts": {
+    "test": "jest"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}"
+    ],
+    "coverageDirectory": "./coverage/",
+    "errorOnDeprecated": true,
+    "globals": {},
+    "verbose": true
+  },
+  "devDependencies": {
+    "jest": "^23.5.0"
+  }
+}

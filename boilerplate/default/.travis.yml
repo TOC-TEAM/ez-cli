@@ -1,0 +1,10 @@
+language: node_js
+node_js:
+  - 10
+  - 8
+cache:
+  directories:
+    - node_modules
+after_success:
+{% if testRunner === 'jest' %}  - './node_modules/.bin/codecov -e TRAVIS_NODE_VERSION -f coverage/*.json'{% endif %}
+{% if testRunner === 'ava' %} - './node_modules/.bin/nyc report --reporter=text-lcov > coverage.lcov && ./node_modules/.bin/codecov'{% endif %}
