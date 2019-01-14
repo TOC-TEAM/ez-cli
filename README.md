@@ -130,6 +130,29 @@ Note: 以上的路径`src/pages`, `app/middleware`等，全部是相对于当前
 
 关于支持的通配符，可以[参看这里](https://github.com/isaacs/minimatch#usage)
 
+### ez pkg
+
+> 快速的创建一个模块化的包。
+> 比如你想写一个 react 组件或者 vue 组件等，那么可以使用该命令快速的生成一个包所需要的环境（rollup 编译，jest 测试等）。
+
+```bash
+$ ez pkg <pkgname>
+
+# 会在当前进程的工作目录下创建一个react-modal文件夹
+# 该文件夹中放置了发布一个react组件包所需要的相关配置文件
+$ ez pkg react-modal
+
+# 生成一个作用域包
+# 就是包的名称以 @scope/ 作为前缀
+$ ez pkg @ic/react-modal
+```
+
+Note: 关于作用域包的更多信息[查看这里](https://docs.npmjs.com/about-scopes)
+
+### ez init
+
+> 从远程仓库拉取一个模板
+
 ### ez tree
 
 > 为了方便查看文件目录结构，提供了 tree 命令。
