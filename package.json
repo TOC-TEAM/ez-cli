@@ -21,7 +21,7 @@
     "commit": "git-cz",
     "release": "standard-version",
     "test": "jest --verbose --runInBand",
-    "test:watch": "jest --watch --coverage false --verbose"
+    "test:watch": "jest --watch --coverage --verbose"
   },
   "husky": {
     "hooks": {
@@ -69,15 +69,19 @@
   "jest": {
     "collectCoverage": true,
     "collectCoverageFrom": [
-      "lib/**/*.{js,jsx}",
-      "!lib/builder/**"
+      "**/lib/**/*.{js,jsx}"
+    ],
+    "coveragePathIgnorePatterns": [
+      "<rootDir>/node_modules/",
+      "<rootDir>/lib/builder/"
     ],
     "coverageDirectory": "./coverage/",
     "errorOnDeprecated": true,
     "globals": {},
-    "testMatch": [
-      "**/__tests__/*.spec.js",
-      "!**/boilerplate/**"
+    "testPathIgnorePatterns": [
+      "<rootDir>/boilerplate/",
+      "<rootDir>/node_modules/",
+      "<rootDir>/__tests__/fixtures/"
     ]
   },
   "dependencies": {
