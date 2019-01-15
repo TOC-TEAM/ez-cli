@@ -57,6 +57,7 @@ npm install ez-cli -D
 ### ez
 
 > 在 egg 脚手架生成的项目骨架基础上初始化 web 目录结构。
+> 如果没有先初始化 egg 项目，那么会提示让你先去安装 egg 模板。
 
 ### ez add
 
