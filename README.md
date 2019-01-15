@@ -153,6 +153,19 @@ Note: 关于作用域包的更多信息[查看这里](https://docs.npmjs.com/abo
 
 > 从远程仓库拉取一个模板
 
+```bash
+$ ez init <dir> [options]
+
+# 从远程仓库拉取一个模板到当前进程所在的目录
+$ ez init
+
+# 将远程的模板拉取到当前进程下的zhinanzhen目录
+$ ez init zhinanzhen
+
+# 默认拉取master分支，可以通过-b指定具体的分支
+$ ez init zhinanzhen -b development
+```
+
 ## License
 
 MIT © [xxxxxMiss](https://github.com/xxxxxMiss)
