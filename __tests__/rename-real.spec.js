@@ -21,27 +21,27 @@ describe('ez rename', () => {
     process.chdir(cwd)
   })
 
-  it('option -s/--style camel', () => {
-    compare('hyphen', 'camel')
+  it('option -s/--style camel', async () => {
+    await compare('hyphen', 'camel')
   })
-  it('option -s/--style hyphen', () => {
-    compare('camel', 'hyphen')
+  it('option -s/--style hyphen', async () => {
+    await compare('camel', 'hyphen')
   })
-  it('option -s/--style pascal', () => {
-    compare('hyphen', 'pascal')
+  it('option -s/--style pascal', async () => {
+    await compare('hyphen', 'pascal')
   })
-  it('option -s/--style underscore', () => {
-    compare('camel', 'underscore')
+  it('option -s/--style underscore', async () => {
+    await compare('camel', 'underscore')
   })
 
-  it('option -f/--file', () => {
+  it('option -f/--file', async () => {
     const basePath = path.join(__dirname, 'fixtures')
     const testPath = path.join(basePath, 'test')
     const camelPath = path.join(basePath, 'camel')
     process.chdir(basePath)
     const prev = fs.readdirSync(testPath)[0]
     const prevCamel = fs.readdirSync(camelPath)[0]
-    renameAction({
+    await renameAction({
       style: 'underscore',
       file: ['test/*.js'],
     })
@@ -50,24 +50,24 @@ describe('ez rename', () => {
     expect(now).not.toBe(prev)
     expect(now).toBe(transform.underscore(prev))
     expect(nowCamel).toBe(prevCamel)
-    renameAction({
+    await renameAction({
       style: 'hyphen',
       file: ['test/*.js'],
     })
   })
 })
 
-function compare(to, from) {
+async function compare(to, from) {
   const targetPath = path.join(__dirname, `fixtures/${from}`)
   process.chdir(targetPath)
   const prev = fs.readdirSync(targetPath)[0]
-  renameAction({
+  await renameAction({
     style: to,
   })
   const now = fs.readdirSync(targetPath)[0]
   expect(now).not.toBe(prev)
   expect(now).toBe(transform[to](prev))
-  renameAction({
+  await renameAction({
     style: from,
   })
 }
