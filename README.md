@@ -153,15 +153,6 @@ Note: 关于作用域包的更多信息[查看这里](https://docs.npmjs.com/abo
 
 > 从远程仓库拉取一个模板
 
-### ez tree
-
-> 为了方便查看文件目录结构，提供了 tree 命令。
-
-```bash
-# 具体的选项可以使用tree --help查看
-$ ez tree -I node_modules -L 5
-```
-
 ## License
 
 MIT © [xxxxxMiss](https://github.com/xxxxxMiss)
