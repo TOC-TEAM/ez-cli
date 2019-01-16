@@ -47,9 +47,9 @@ exports.prompt = prompts => {
     if (a.choices) {
       expect(choices.length).toBe(a.choices.length)
       a.choices.forEach((c, i) => {
-        const expected = a.choices[i]
+        const expected = a.choices[i].value || a.choices[i]
         if (expected) {
-          expect(choices[i]).toMatch(expected)
+          expect(choices[i].value || choices[i]).toMatch(expected)
         }
       })
     }
