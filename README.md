@@ -167,6 +167,14 @@ $ ez init zhinanzhen
 $ ez init zhinanzhen -b development
 ```
 
+## TODOS
+
+- [ ] 某些同步操作可以改为异步的方式
+- [ ] git init 命令支持从 gitlab 拉取模板
+- [ ] git init 增加模板缓存功能（未授权的 github app API 调用有次数限制）。增加缓存，可以减少 API 调用次数，拉取速度也更快一些
+- [ ] 为每个命令增加相关的 loading 显示/关闭，以及操作完成了显示一些友好的提示信息
+- [ ] 丰富相关命令的选项
+
 ## License
 
 MIT © [xxxxxMiss](https://github.com/xxxxxMiss)

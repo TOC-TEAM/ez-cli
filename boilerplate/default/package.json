@@ -66,5 +66,10 @@
   "files": [
     "dist",
     "src"
-  ]
+  ],
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  }
 }
