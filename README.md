@@ -1,6 +1,6 @@
 # ez-cli
 
-> A cli to create an MPA egg project easily
+> A cli to help daily devlopment easily
 
 [![Build Status](https://img.shields.io/travis/TOC-TEAM/ez-cli/master.svg)](https://travis-ci.org/TOC-TEAM/ez-cli)
 [![Codecov branch](https://img.shields.io/codecov/c/github/TOC-TEAM/ez-cli/master.svg)](https://codecov.io/gh/TOC-TEAM/ez-cli)
@@ -174,6 +174,10 @@ $ ez init zhinanzhen -b development
 - [ ] git init 增加模板缓存功能（未授权的 github app API 调用有次数限制）。增加缓存，可以减少 API 调用次数，拉取速度也更快一些
 - [ ] 为每个命令增加相关的 loading 显示/关闭，以及操作完成了显示一些友好的提示信息
 - [ ] 丰富相关命令的选项
+- [ ] 更新内置的几套模板（依赖包升级等）
+- [ ] 增加`ez git`命名，调研下看能否解决开发直接总是遇到提交冲突，以及一键提交等
+- [ ] 优化下相关测试等（目前有些测试写的不是很好，测试覆盖率不是很高）
+- [ ] 优化下`ez pkg`，支持在使用在特定的环境下开发 package.json 中的配置是不一样的（比如，使用 commonjs 规范，那么可以把 rollup 打包的相关依赖去掉等）
 
 ## License
 
