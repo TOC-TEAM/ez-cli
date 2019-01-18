@@ -42,7 +42,7 @@ function setPrompts(dir = path.join(process.cwd(), 'exists')) {
     {
       type: 'input',
       name: 'dir',
-      message: 'directory download to',
+      message: 'download to',
       default: argv.dir,
       useDefault: true,
     },
