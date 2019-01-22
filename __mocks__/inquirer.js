@@ -1,6 +1,8 @@
+const pEachSeries = require('p-each-series')
+
 let pendingAssertions
 
-exports.prompt = prompts => {
+exports.prompt = async prompts => {
   if (!pendingAssertions) {
     throw new Error(
       `inquirer was mocked and used without pending assertions: ${prompts}`
@@ -9,8 +11,9 @@ exports.prompt = prompts => {
 
   const answers = {}
   let skipped = 0
-  prompts.forEach((prompt, i) => {
+  pEachSeries(async (prompt, i) => {
     if (prompt.when && !prompt.when(answers)) {
+      console.log('=====', prompt.name)
       skipped++
       return
     }
@@ -40,10 +43,12 @@ exports.prompt = prompts => {
       expect(message).toMatch(a.message)
     }
 
-    const choices =
-      typeof prompt.choices === 'function'
-        ? prompt.choices(answers)
-        : prompt.choices
+    let choices = ''
+    if (prompt.choices === 'function') {
+      choices = await prompt.choices(answers)
+    } else {
+      choices = prompt.choices
+    }
     if (a.choices) {
       expect(choices.length).toBe(a.choices.length)
       a.choices.forEach((c, i) => {
