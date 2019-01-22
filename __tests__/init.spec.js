@@ -17,7 +17,7 @@ jest.spyOn(request, 'getBoilerplates').mockImplementation(() => [
   },
 ])
 
-jest.spyOn(request, 'download')
+jest.spyOn(request, 'download').mockImplementation(() => true)
 
 describe('ez init', () => {
   it('should call getBoilerplates and download', async () => {
@@ -31,21 +31,12 @@ describe('ez init', () => {
 
 function setPrompts(dir = path.join(process.cwd(), 'exists')) {
   const argv = parseArgv(
-    '--dir',
-    tildify(dir),
     '--branch',
     'master',
     '--repo',
     'toc-boilerplate/egg-mpa'
   )
   expectPrompts([
-    {
-      type: 'input',
-      name: 'dir',
-      message: 'download to',
-      default: argv.dir,
-      useDefault: true,
-    },
     {
       type: 'input',
       name: 'branch',

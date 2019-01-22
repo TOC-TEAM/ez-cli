@@ -54,10 +54,10 @@ npm install ez-cli -D
 
 > 以下所有命令相关的选项都可以通过`ez [command] --help`来查看具体用法。
 
-### ez
+### ez [dir]
 
-> 在 egg 脚手架生成的项目骨架基础上初始化 web 目录结构。
-> 如果没有先初始化 egg 项目，那么会提示让你先去安装 egg 模板。
+> 在`dir`目录中初始化一个egg模板和web目录结构。
+> 如果`dir`设置，那么默认安装到当前进程的工作目录。如果该目录不为空，会得到是否覆盖该目录的提示。
 
 ### ez add
 
@@ -155,7 +155,7 @@ Note: 关于作用域包的更多信息[查看这里](https://docs.npmjs.com/abo
 > 从远程仓库拉取一个模板
 
 ```bash
-$ ez init <dir> [options]
+$ ez init [dir] [options]
 
 # 从远程仓库拉取一个模板到当前进程所在的目录
 $ ez init
