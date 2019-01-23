@@ -28,9 +28,9 @@ jest.spyOn(request, 'getBranchList').mockImplementation(() => [
 ])
 jest.spyOn(request, 'download').mockImplementation(() => true)
 
-describe('ez init', async () => {
+describe('ez init', () => {
   it('should call getBoilerplates and download', async () => {
-    const argv = await setPrompts()
+    const argv = setPrompts()
     await initAction(argv)
     expect(request.getBoilerplates).toHaveBeenCalled()
     expect(request.getBoilerplates.mock.results[0].value).toHaveLength(2)
@@ -38,14 +38,9 @@ describe('ez init', async () => {
   })
 })
 
-async function setPrompts(dir = path.join(process.cwd(), 'exists')) {
-  const argv = parseArgv(
-    '--branch',
-    'master',
-    '--repo',
-    'toc-boilerplate/egg-mpa'
-  )
-  await expectPrompts([
+function setPrompts(dir = path.join(process.cwd(), 'exists')) {
+  const argv = parseArgv('--branch', 'master', '--repo', 'toc-boilerplate')
+  expectPrompts([
     {
       type: 'list',
       name: 'boilerplate',

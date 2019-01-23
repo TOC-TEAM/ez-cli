@@ -11,11 +11,9 @@ exports.prompt = async prompts => {
 
   const answers = {}
   let skipped = 0
-  pEachSeries(async (prompt, i) => {
+  return pEachSeries(prompts, async (prompt, i) => {
     if (prompt.when && !prompt.when(answers)) {
-      console.log('=====', prompt.name)
-      skipped++
-      return
+      return await skipped++
     }
 
     const setValue = val => {
@@ -44,7 +42,7 @@ exports.prompt = async prompts => {
     }
 
     let choices = ''
-    if (prompt.choices === 'function') {
+    if (typeof prompt.choices === 'function') {
       choices = await prompt.choices(answers)
     } else {
       choices = prompt.choices
@@ -66,7 +64,7 @@ exports.prompt = async prompts => {
 
     if (a.choose != null) {
       expect(prompt.type === 'list' || prompt.type === 'rawList').toBe(true)
-      setValue(choices[a.choose])
+      setValue(choices[a.choose].value || choices[a.choose])
     }
 
     if (a.check != null) {
@@ -87,12 +85,12 @@ exports.prompt = async prompts => {
           : prompt.default
       )
     }
+  }).then(() => {
+    expect(prompts.length).toBe(pendingAssertions.length + skipped)
+    pendingAssertions = null
+
+    return Promise.resolve(answers)
   })
-
-  expect(prompts.length).toBe(pendingAssertions.length + skipped)
-  pendingAssertions = null
-
-  return Promise.resolve(answers)
 }
 
 exports.expectPrompts = assertions => {
