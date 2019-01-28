@@ -33,7 +33,7 @@
 │   ├── pages
 │   │   ├── account
 │   │   │   ├── index.html
-│   │   │   ├── index.js
+│   │   │   ├── add.js
 │   │   │   └── index.scss
 │   │   ├── position
 │   │   │   ├── detail.html
@@ -69,21 +69,20 @@ npm install ez-cli -D
 #│   └── pages
 #│       ├── account
 #│       │   ├── index.html
-#│       │   ├── index.js
-#│       │   ├── index.scss
+add.js
+#│       │add.jsndex.scss
 $ ez add account/index.js
 
-# 可以一次性添加多个入口。
-$ ez add account/login.js position/index.js
+# 可以一次性添加add.jsez add account/login.js position/index.js
 
-# -o(--only)只生成入口文件，不生成入口文件对应的资源文件目录。
+# -o(--onadd.js文件，不生成入口文件对应的资源文件目录。
 # 默认情况下，每添加一个入口文件，都会生成对一个的资源文件目录。
 # 比如下面的命令，会生成对应的资源目录(src/assets/js/account/index/)。
 # 建议不要开启--only选项，因为按照约定配合webpack loader会自动加载每个入口页面对应的资源文件。
 # 而且自己手动创建多级目录结构有些繁琐还容易出错。
 $ ez add account/index.js -o
 
-# 默认情况下，css预处理器使用scss，通过该选项可以指定使用特定的预处理器。
+# 默认情况add.js器使用scss，通过该选项可以指定使用特定的预处理器。
 # 也可以通过--css less这种形式指定。
 $ ez add account/logout.js --styl
 ```
@@ -96,16 +95,14 @@ $ ez add account/logout.js --styl
 # 移除一个入口文件，也会自动移除同名的html和css
 $ ez rm account/index.js
 
-# 可以一次性移除多个入口
-$ ez rm account/index.js position/index.js
-
-# 默认情况下，每当移除一个入口js，只会自动移除同名的html和js，
+# 可以一次性移除add.jsz rm account/index.js position/iadd.js
+# 默认情况下，每add.jss，只会自动移除同名的html和js，
 # 并不会自动移除该入口文件对应的资源目录极其下面的资源文件。
 # 通过-a选项，可以将其对应的资源文件也移除掉。
 $ ez rm account/index.js -a
 ```
 
-### ez rename
+##add.jsame
 
 > 修改一个文件。
 

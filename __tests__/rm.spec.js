@@ -12,7 +12,7 @@ describe('ez rm', () => {
   })
   beforeEach(() => {
     addAction({
-      entries: ['account/index.js', 'position/index.js'],
+      entries: ['account/add.js', 'position/add.js'],
       css: 'scss',
     })
   })
@@ -24,7 +24,7 @@ describe('ez rm', () => {
     const dir = path.join(process.cwd(), 'src/pages/account')
     expect(vol.readdirSync(dir)).toHaveLength(3)
     rmAction({
-      entries: ['account/index.js'],
+      entries: ['account/add.js'],
     })
     expect(vol.readdirSync(dir)).toHaveLength(0)
   })
@@ -35,7 +35,7 @@ describe('ez rm', () => {
     expect(vol.readdirSync(dirAccount)).toHaveLength(3)
     expect(vol.readdirSync(dirPosition)).toHaveLength(3)
     rmAction({
-      entries: ['account/index.js', 'position/index.js'],
+      entries: ['account/add.js', 'position/add.js'],
     })
     expect(vol.readdirSync(dirAccount)).toHaveLength(0)
     expect(vol.readdirSync(dirPosition)).toHaveLength(0)
@@ -48,7 +48,7 @@ describe('ez rm', () => {
     expect(vol.readdirSync(dir)).toHaveLength(3)
     expect(vol.readdirSync(assetDir)).toHaveLength(1)
     rmAction({
-      entries: ['account/index.js'],
+      entries: ['account/add.js'],
       all: true,
     })
     expect(vol.readdirSync(dir)).toHaveLength(0)

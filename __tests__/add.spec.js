@@ -18,7 +18,7 @@ describe('ez add', () => {
 
   it('positional <entires..>/single file', () => {
     addAction({
-      entries: ['account/index.js'],
+      entries: ['account/add.js'],
       css: 'scss',
     })
 
@@ -27,7 +27,7 @@ describe('ez add', () => {
 
   it('positional <entires..>/multiple files', () => {
     addAction({
-      entries: ['account/index.js', 'position/index.js'],
+      entries: ['account/add.js', 'position/add.js'],
       css: 'scss',
     })
 
@@ -36,7 +36,7 @@ describe('ez add', () => {
 
   it('option -o/--only', () => {
     addAction({
-      entries: ['account/index.js'],
+      entries: ['account/add.js'],
       css: 'scss',
       only: true,
     })
@@ -45,7 +45,7 @@ describe('ez add', () => {
 
   it('option --css stylus', () => {
     addAction({
-      entries: ['account/index.js'],
+      entries: ['account/add.js'],
       only: true,
       css: 'stylus',
     })
@@ -57,7 +57,7 @@ describe('ez add', () => {
 
   it('option --scss', () => {
     addAction({
-      entries: ['account/index.js'],
+      entries: ['account/add.js'],
       only: true,
       scss: true,
     })
@@ -69,7 +69,7 @@ describe('ez add', () => {
 
   it('option --less', () => {
     addAction({
-      entries: ['account/index.js'],
+      entries: ['account/add.js'],
       only: true,
       less: true,
     })
@@ -81,7 +81,7 @@ describe('ez add', () => {
 
   it('option --styl', () => {
     addAction({
-      entries: ['account/index.js'],
+      entries: ['account/add.js'],
       only: true,
       styl: true,
     })
