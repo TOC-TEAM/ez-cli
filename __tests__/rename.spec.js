@@ -31,11 +31,11 @@ describe('ez rename', () => {
   it('positional [oldname] [newname]', () => {
     renameAction({
       oldname: 'account/login.js',
-      newname: 'account/add.js',
+      newname: 'account/index.js',
     })
     expect(vol.toJSON()).toMatchObject(
       getConstructure({
-        entries: ['account/add.js'],
+        entries: ['account/index.js'],
         css: 'scss',
       })
     )
@@ -48,7 +48,7 @@ describe('ez rename', () => {
     })
     expect(vol.toJSON()).toMatchObject(
       getConstructure({
-        entries: ['account/add.js'],
+        entries: ['account/index.js'],
         css: 'scss',
       })
     )
