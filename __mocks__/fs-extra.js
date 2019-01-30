@@ -22,11 +22,18 @@ fse.createFileSync = function createFileSync(file, data = '') {
 }
 
 fse.writeFile = function writeFile(_path, data, options, callback) {
-  vol.writeFile(_path, data, options, callback)
+  if (callback) {
+    return vol.writeFile(_path, data, options, callback)
+  }
+  return new Promise((resolve, reject) => {
+    vol.writeFile(_path, data, options, err => {
+      if (err) return reject(err)
+      resolve()
+    })
+  })
 }
 
 fse.readFile = function readFile(_path, options) {
-  console.log(_path)
   return vol.readFileSync(_path, options)
 }
 
@@ -56,7 +63,12 @@ fse.readFileSync = function readFileSync(_path, options) {
 }
 
 fse.ensureDir = function ensureDir(_path) {
+  vol.existsSync(_path)
+}
+fse.existsSync = function existsSync(_path) {
   return vol.existsSync(_path)
 }
-
+fse.writeJson = function writeJson(_path, data, options, callback) {
+  vol.writeFile(_path, data, options, (callback = () => {}))
+}
 module.exports = fse
