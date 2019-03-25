@@ -44,4 +44,8 @@ fse.readFileSync = function readFileSync(_path, options) {
   return vol.readFileSync(_path, options)
 }
 
+fse.readdirSync = function readdirSync(_path, options) {
+  return vol.readdirSync(_path, options)
+}
+
 module.exports = fse
