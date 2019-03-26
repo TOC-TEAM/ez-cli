@@ -1,8 +1,6 @@
-import ask from '../lib/action/init/ask'
 import initAction from '../lib/action/init'
 import { expectPrompts } from 'inquirer'
 import parseArgv from '../lib/argv'
-import { tildify } from '../lib/helper'
 import request from '../lib/helper/request'
 import path from 'path'
 

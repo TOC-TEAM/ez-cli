@@ -11,7 +11,7 @@
       "<rootDir>/node_modules/"
     ],
     "testMatch": [
-      "**/__tests__/*.spec.{js,ts,tsx}"
+      "**/__tests__/*.spec.{js,jsx,ts,tsx}"
     ],
     "coverageDirectory": "./coverage/",
     "errorOnDeprecated": true,

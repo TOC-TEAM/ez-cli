@@ -12,8 +12,8 @@ exports.prompt = async prompts => {
   const answers = {}
   let skipped = 0
   return pEachSeries(prompts, async (prompt, i) => {
-    if (prompt.when && !prompt.when(answers)) {
-      return await skipped++
+    if (prompt.when && !(await prompt.when(answers))) {
+      return skipped++
     }
 
     const setValue = val => {
