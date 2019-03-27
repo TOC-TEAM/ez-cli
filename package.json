@@ -20,8 +20,8 @@
     "start": "rollup -c -w",
     "commit": "git-cz",
     "release": "standard-version",
-    "test": "jest --verbose --runInBand",
-    "test:watch": "jest --watch --coverage --verbose"
+    "test": "cross-env NODE_ENV=test jest --verbose --runInBand",
+    "test:watch": "cross-env NODE_ENV=test jest --watch --coverage --verbose"
   },
   "husky": {
     "hooks": {
@@ -47,7 +47,7 @@
     "babel-jest": "^23.6.0",
     "codecov": "^3.1.0",
     "commitizen": "^3.0.2",
-    "cross-env": "^5.1.4",
+    "cross-env": "^5.2.0",
     "cz-conventional-changelog": "^2.1.0",
     "eslint": "^5.0.1",
     "eslint-config-standard": "^11.0.0",

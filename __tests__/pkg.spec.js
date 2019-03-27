@@ -53,8 +53,6 @@ describe('ez pkg', () => {
         type: 'input',
         name: 'description',
         message: 'Package Description',
-        default: 'test create package',
-        useDefault: true,
       },
       {
         type: 'input',
