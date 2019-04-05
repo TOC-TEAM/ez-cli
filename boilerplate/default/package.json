@@ -16,7 +16,8 @@
     "build": "rollup -c",
     "start": "rollup -c -w",
     "commit": "git-cz",
-    "release": "standard-version"
+    "clean": "rimraf dist",
+    "release": "{{manager}} clean && {{manager} build && standard-version && git push --follow-tags origin master && {{manager}} publish"
   },
   "husky": {
     "hooks": {
