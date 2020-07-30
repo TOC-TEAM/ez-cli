@@ -21,7 +21,8 @@
     "commit": "git-cz",
     "release": "standard-version",
     "test": "cross-env NODE_ENV=test jest --verbose --runInBand",
-    "test:watch": "cross-env NODE_ENV=test jest --watch --coverage --verbose"
+    "test:watch": "cross-env NODE_ENV=test jest --watch --coverage --verbose",
+    "upd": "node ./scripts/update.js"
   },
   "husky": {
     "hooks": {
@@ -86,7 +87,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
-    "chalk": "^2.4.2",
+    "chalk": "^4.1.0",
     "conf": "^2.1.0",
     "egg-init": "^1.15.0",
     "execa": "^1.0.0",
@@ -95,6 +96,7 @@
     "globby": "^8.0.1",
     "inquirer": "^6.2.1",
     "lodash": "^4.17.11",
+    "npm-check-updates": "^7.0.2",
     "nunjucks": "^3.1.6",
     "ora": "^3.0.0",
     "p-each-series": "^1.0.0",
