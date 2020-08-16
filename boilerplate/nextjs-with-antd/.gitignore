@@ -1,0 +1,22 @@
+# packages
+node_modules
+yarn-error.log*
+npm-debug.log*
+yarn.lock
+package-lock.json
+
+# cache
+.next
+dist
+out
+
+# local test
+_test_
+
+# test coverage
+coverage
+
+# env
+.DS_Store
+.vscode
+.idea

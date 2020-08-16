@@ -1,0 +1,15 @@
+{
+  "npmClient": "npm",
+  "command": {
+    "publish": {
+      "ignoreChanges": ["*.md", "packages/**/*.md"],
+      "message": "chore(release): publish",
+      "registry": "http://npm.dfgroup.com:4873/"
+    },
+    "bootstrap": {
+      "npmClientArgs": ["--no-package-lock"]
+    }
+  },
+  "packages": ["packages/*"],
+  "version": "independent"
+}
