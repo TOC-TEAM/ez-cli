@@ -95,7 +95,7 @@
     "git-config-path": "^2.0.0",
     "globby": "^8.0.1",
     "inquirer": "^6.2.1",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.21",
     "npm-check-updates": "^7.0.2",
     "nunjucks": "^3.1.6",
     "ora": "^3.0.0",
